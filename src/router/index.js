@@ -9,23 +9,29 @@ export default new Router({
 	routes: [
 		{
             path: '/',
-            redirect: '/go'
+            redirect: '/common/index'
         },{
-	    	path: '/go',
-	    	name: "go",
-	    	component: r => require.ensure([], () => (require('@/components/gowhere/index.vue')))
-	    },{
-	    	path: '/who',
-	    	name: "who",
-	    	component: r => require.ensure([], () => (require('@/components/withWho/index.vue')))
-	    },{
-	    	path: '/news',
-	    	name: "news",
-	    	component: r => require.ensure([], () => (require('@/components/news/index.vue')))
-	    },{
-	    	path: '/my',
-	    	name: "my",
-	    	component: r => require.ensure([], () => (require('@/components/my/index.vue')))
+	    	path: '/common',
+	    	name: "common",
+	    	component: r => require.ensure([], () => (require('@/common.vue'))),
+	    	children: [{
+		    	path: 'index',
+		    	name: "index",
+		    	component: r => require.ensure([], () => (require('@/components/index/index.vue')))
+		    },{
+		    	path: 'easy_go',
+		    	name: "easy_go",
+		    	component: r => require.ensure([], () => (require('@/components/easy_go/index.vue')))
+		    },{
+		    	path: 'my',
+		    	name: "my",
+		    	component: r => require.ensure([], () => (require('@/components/my/index.vue')))
+		    }]
+	    },
+	    {
+	    	path: '/index/city',
+	    	name: "city",
+	    	component: r => require.ensure([], () => (require('@/components/index/components/selectedCity.vue')))
 	    }
 	]
 })
