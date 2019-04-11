@@ -1,8 +1,8 @@
 <template>
 	<div class="goCom">
 		<header class="mui-bar mui-bar-nav headerstyle">
-			<span @click="goToCity" class="mui-icon icon-location1 mui-pull-left">北京</span>
-			<div class="mui-input-row mui-search">
+			<span @click="goToCity" class="mui-icon icon-location1 mui-pull-left">{{gpsCity}}</span>
+			<div @click="goToSearch" class="mui-input-row mui-search">
 				<input type="search" class="mui-input-clear" placeholder="">
 				<span class="mui-icon mui-icon-search"></span>
 			</div>
@@ -41,13 +41,18 @@
 		data(){
 			return {
 				selected: "where",
-				
+				gpsCity: this.$route.query.city || "北京"
 			}
 		},
 		methods: {
 			goToCity(){
 				this.$router.push({
 					name: "city"
+				})
+			},
+			goToSearch(){
+				this.$router.push({
+					name: "search"
 				})
 			}
 		},

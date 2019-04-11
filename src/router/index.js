@@ -32,6 +32,11 @@ export default new Router({
 	    	path: '/index/city',
 	    	name: "city",
 	    	component: r => require.ensure([], () => (require('@/components/index/components/selectedCity.vue')))
+	    },
+	    {
+	    	path: '/index/search',
+	    	name: "search",
+	    	component: r => require.ensure([], () => (require('@/components/index/components/searchPage.vue')))
 	    }
 	]
 })
