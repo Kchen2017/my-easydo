@@ -5503,6 +5503,10 @@ body > .mui-progressbar
   content: "\e60a";
 }
 
+.icon-paiju:before {
+  content: "\e6ad";
+}
+
 .icon-jianshen:before {
   content: "\e645";
 }
@@ -5567,6 +5571,10 @@ body > .mui-progressbar
   content: "\e63f";
 }
 
+.icon-zhinengxuanxie_qiaodan:before {
+  content: "\e604";
+}
+
 .icon-BowlingSpare:before {
   content: "\e607";
 }
@@ -5583,8 +5591,12 @@ body > .mui-progressbar
   content: "\ea77";
 }
 
+.icon-kankanchecopy:before {
+  content: "\e634";
+}
+
 .icon-tubiaozhizuomoban:before {
-  content: "\e604";
+  content: "\e606";
 }
 
 .icon-golf:before {
@@ -5599,8 +5611,20 @@ body > .mui-progressbar
   content: "\e501";
 }
 
+.icon-navig-quanzi:before {
+  content: "\e502";
+}
+
+.icon-wan:before {
+  content: "\e6ec";
+}
+
 .icon-taiqiu1:before {
   content: "\e674";
+}
+
+.icon-location:before {
+  content: "\e537";
 }
 
 .icon-qun:before {
@@ -5620,19 +5644,31 @@ body > .mui-progressbar
 }
 
 .icon-zuqiu1:before {
-  content: "\e606";
-}
-
-.icon-youyong2:before {
   content: "\e608";
 }
 
+.icon-kankan:before {
+  content: "\e6f0";
+}
+
+.icon-location1:before {
+  content: "\e505";
+}
+
+.icon-youyong2:before {
+  content: "\e60b";
+}
+
 .icon-paobuS:before {
-  content: "\e502";
+  content: "\e503";
 }
 
 .icon-bingpangqiu:before {
   content: "\e60d";
+}
+
+.icon-location2:before {
+  content: "\e50a";
 }
 
 .icon-baolingqiu2:before {
@@ -5644,7 +5680,7 @@ body > .mui-progressbar
 }
 
 .icon-qiuchang1:before {
-  content: "\e60b";
+  content: "\e60c";
 }
 
 .icon-taiqiu3:before {
@@ -5656,7 +5692,15 @@ body > .mui-progressbar
 }
 
 .icon-qita:before {
-  content: "\e60c";
+  content: "\e60f";
+}
+
+.icon-sc:before {
+  content: "\e504";
+}
+
+.icon-zu:before {
+  content: "\e63b";
 }
 
 .icon-youyong3:before {
@@ -5675,8 +5719,12 @@ body > .mui-progressbar
   content: "\e69d";
 }
 
+.icon-test:before {
+  content: "\e506";
+}
+
 .icon-running-copy:before {
-  content: "\e504";
+  content: "\e507";
 }
 
 .icon-tubiao-qiuchang:before {
@@ -5685,6 +5733,14 @@ body > .mui-progressbar
 
 .icon-bingpangqiuchang:before {
   content: "\e65a";
+}
+
+.icon-zu1:before {
+  content: "\e51e";
+}
+
+.icon-location3:before {
+  content: "\e520";
 }
 .mui-fullscreen
 {

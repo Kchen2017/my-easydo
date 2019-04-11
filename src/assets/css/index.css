@@ -39,8 +39,19 @@
 .go_list {
 	display: flex;
 	justify-content: space-between;
-	padding: 1em 1em
+	padding: 1em 1em;
+	position: relative;
 }
+
+.go_list:before{
+    content: "";
+    position: absolute;
+    bottom: 0em;
+    width: 22.5em;
+    height: 0;
+    border: 1px solid #bcb7b7;
+}
+
 .go_list_img {
 	height: 6em;
 	width: 9em;
@@ -50,6 +61,7 @@
 	height: 6em;
 	width: 8em;
 }
+
 .go_list_context li{
 	width: 11em;
     text-align: left;
@@ -73,6 +85,6 @@
     overflow: hidden;
 }
 .go_recommend .mint-tab-container{
-	height: 23.2em;
+	height: 30.2em;
 	overflow-y: scroll
 }

@@ -9,7 +9,7 @@
             <ul class="go_list_context">
             	<li>{{item.backCateName}}</li>
             	<li>{{item.backCateName}}</li>
-            	<li><span class="mui-icon icon-tubiao-qiuchang">{{item.areaname}}</span></li>
+            	<li><span class="mui-icon icon-location1">{{item.areaname}}</span></li>
             </ul>
         </li>
 	</ul>

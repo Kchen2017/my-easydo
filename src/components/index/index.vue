@@ -1,7 +1,7 @@
 <template>
 	<div class="goCom">
 		<header class="mui-bar mui-bar-nav headerstyle">
-			<span @click="goToCity" class="mui-icon icon-tubiao-qiuchang mui-pull-left">北京</span>
+			<span @click="goToCity" class="mui-icon icon-location1 mui-pull-left">北京</span>
 			<div class="mui-input-row mui-search">
 				<input type="search" class="mui-input-clear" placeholder="">
 				<span class="mui-icon mui-icon-search"></span>
