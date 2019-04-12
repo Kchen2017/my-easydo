@@ -1,0 +1,107 @@
+	.search_page {
+		height: 100%
+	}
+	.search_page .mui-pull-right{
+		position: relative;
+	    float: right;
+	    top: -4.5em;
+	}
+	.search_page .headerstyle{
+		height: 4em;
+	}
+	.headerstyle .mui-pull-left{
+		font-size: 1em;
+		margin-top: 1em;
+	}
+	.search_page .headerstyle .mui-search {
+	    width: 17em;
+	    left: 1.5em;
+	    bottom: 2.2em;
+	    height: 3em;
+	}
+	.search_page .headerstyle .mui-icon-search {
+	    position: absolute;
+	    top: 0px;
+	    left: 0em;
+	}
+	.search_page .search_content{
+		padding-top: 4.2em;
+    	height: 100%;
+
+	}
+	.historyList{
+		height: 5em;
+		text-align: left;
+		padding: 1em 1em;
+		background-color: #f7f7f7;
+	}
+	.historyList p {
+		display: flex;
+		justify-content: space-between;
+		height: 2em;
+		line-height: 2em;
+		padding-bottom: 1em;
+	}
+	/*.historyList i{
+		display: inline-block;
+		width: 2em;
+		height: 1em;
+		background-color: #d2cfcf;
+	}*/
+	.hotSearch{
+		height: 20em;
+		text-align: left;
+		padding: 1em 1em;
+		margin-top: 0.5em;
+		background-color: #f7f7f7;
+	}
+	.search_where_tab{
+		margin-top: 0.3em;
+	}
+	.hotSearch p{
+		height: 2em;
+		line-height: 2em;
+		padding-bottom: 1em;
+		position: relative;
+	}
+	.hotSearch p:before{
+		content: "";
+	    position: absolute;
+	    bottom: 0em;
+	    width: 24.5em;
+	    height: 0;
+	    border: 0.5px solid #bcb7b7;
+	}
+	.hotList{
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		align-content: stretch;
+	}
+	.hotList span {
+		display: inline-block;
+		height: 2em;
+		width: 9.5em;
+		line-height: 2em;
+		padding-left: 0.5em;
+		position: relative;
+	}
+	.hotList span:before {
+		content: "";
+	    position: absolute;
+	    bottom: 0;
+	    left: 0;
+	    width: 9.5em;
+	    height: 0;
+	    border: 0.5px solid #bcb7b7;
+	}
+	
+	.hotList span:nth-child(even):after{
+		content: "";
+	    position: absolute;
+	    bottom: 0.2em;
+	    left: 0;
+	    width: 0em;
+	    height: 1.5em;
+	    border: 0.5px solid #bcb7b7;
+	}

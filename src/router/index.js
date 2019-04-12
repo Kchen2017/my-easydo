@@ -29,14 +29,29 @@ export default new Router({
 		    }]
 	    },
 	    {
-	    	path: '/index/city',
+	    	path: '/common/index/city',
 	    	name: "city",
 	    	component: r => require.ensure([], () => (require('@/components/index/components/selectedCity.vue')))
 	    },
 	    {
-	    	path: '/index/search',
+	    	path: '/common/index/search',
 	    	name: "search",
 	    	component: r => require.ensure([], () => (require('@/components/index/components/searchPage.vue')))
+	    },
+	    {
+	    	path: '/common/index/filter',
+	    	name: "filter",
+	    	component: r => require.ensure([], () => (require('@/components/index/components/whereWhoFilter.vue')))
+	    },
+	    {
+	    	path: '/common/index/where_detail',
+	    	name: "whereDetail",
+	    	component: r => require.ensure([], () => (require('@/components/index/components/whereDetail.vue')))
+	    },
+	    {
+	    	path: '/common/index/who_detail',
+	    	name: "whoDetail",
+	    	component: r => require.ensure([], () => (require('@/components/index/components/whoDetail.vue')))
 	    }
 	]
 })

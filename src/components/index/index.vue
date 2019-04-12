@@ -19,10 +19,10 @@
 
 				<mt-tab-container v-model="selected">
 				    <mt-tab-container-item id="where">
-				    	<recommend-list  ref="where"></recommend-list>
+				    	<where-list  ref="where"></where-list>
 				    </mt-tab-container-item>
 				    <mt-tab-container-item id="who">
-				    	<recommend-list  ref="who"></recommend-list>
+				    	<who-list  ref="who"></who-list>
 				    </mt-tab-container-item>
 				</mt-tab-container>
 			</div>
@@ -31,12 +31,14 @@
 </template>
 <script>
 	import swip from "./components/swipCom.vue"
-	import recommendList from "./components/recommendList.vue"
+	import whereList from "./components/whereList.vue"
+	import whoList from "./components/whoList.vue"
 	import "@/assets/css/index.css"
 	export default {
 		components: {
 			swip,
-			recommendList
+			whereList,
+			whoList
 		},
 		data(){
 			return {

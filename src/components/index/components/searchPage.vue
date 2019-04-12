@@ -3,21 +3,51 @@
 		<header class="mui-bar mui-bar-nav headerstyle">
 			<span @click="goToindex" class="mui-icon mui-icon-left-nav mui-pull-left"></span>
 			<div  class="mui-input-row mui-search">
-				<input type="search" class="mui-input-clear" placeholder="">
+				<input v-model="inputCon" ref="searchInput" type="search" class="mui-input-clear" :placeholder="inputTip">
 				<span class="mui-icon mui-icon-search"></span>
 			</div>
-			<span class="mui-pull-right">搜索</span>
+			<span @click="goTofilter" class="mui-pull-right">搜索</span>
 		</header>
 		<div class="search_content">
-			
+			<mt-navbar v-model="selected">
+				<mt-tab-item id="where">Go Where</mt-tab-item>
+				<mt-tab-item id="who">With Who</mt-tab-item>
+			</mt-navbar>
+
+			<mt-tab-container v-model="selected">
+			    <mt-tab-container-item id="where">
+					<search-where-tab></search-where-tab>
+			    </mt-tab-container-item>
+			    <mt-tab-container-item id="who">
+					<search-who-tab></search-who-tab>
+			    </mt-tab-container-item>
+			</mt-tab-container>
 		</div>
 	</div>
 </template>
 <script>
+	import "@/assets/searchPage.css"
+	import  searchWhereTab from "./searchWhereTab.vue"
+	import  searchWhoTab from "./searchWhoTab.vue"
 	export default {
+		components: {
+			searchWhereTab,
+			searchWhoTab
+		},
 		data(){
 			return {
-
+				inputTip: "定位去哪玩？",
+				selected: "where",
+				inputCon: ""
+			}
+		},
+		watch: {
+			selected(newVal){
+				if(newVal=="where"){
+					this.inputTip = "定位去哪玩？"
+				}else if(newVal=="who"){
+					this.inputTip = "寻找和谁玩？"
+				}
 			}
 		},
 		methods: {
@@ -25,40 +55,22 @@
 				this.$router.push({
 					name: "index"
 				})
+			},
+			goTofilter(){
+				if(!this.inputCon) return
+				this.$router.push({
+					name: "filter",
+					query: {
+						inputCon: this.inputCon
+					}
+				})
 			}
+		},
+		mounted(){
+			this.$refs.searchInput.focus()
 		}
 	}
 </script>
 <style >
-	.search_page {
-		height: 100%
-	}
-	.search_page .mui-pull-right{
-		position: relative;
-	    float: right;
-	    top: -4.5em;
-	}
-	.headerstyle{
-		height: 4em;
-	}
-	.headerstyle .mui-pull-left{
-		font-size: 1em;
-		margin-top: 1em;
-	}
-	.search_page .headerstyle .mui-search {
-	    width: 17em;
-	    left: 1.5em;
-	    bottom: 2.2em;
-	    height: 3em;
-	}
-	.headerstyle .mui-icon-search {
-	    position: absolute;
-	    top: 0px;
-	    left: 5.5em;
-	}
-	.search_content{
-		padding-top: 4.2em;
-    	height: 100%;
-
-	}
+	
 </style>
