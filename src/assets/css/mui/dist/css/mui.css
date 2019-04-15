@@ -5531,6 +5531,10 @@ body > .mui-progressbar
   content: "\e600";
 }
 
+.icon-xing3:before {
+  content: "\e604";
+}
+
 .icon-lanqiuchang:before {
   content: "\e602";
 }
@@ -5572,7 +5576,7 @@ body > .mui-progressbar
 }
 
 .icon-zhinengxuanxie_qiaodan:before {
-  content: "\e604";
+  content: "\e606";
 }
 
 .icon-BowlingSpare:before {
@@ -5596,7 +5600,7 @@ body > .mui-progressbar
 }
 
 .icon-tubiaozhizuomoban:before {
-  content: "\e606";
+  content: "\e608";
 }
 
 .icon-golf:before {
@@ -5644,7 +5648,7 @@ body > .mui-progressbar
 }
 
 .icon-zuqiu1:before {
-  content: "\e608";
+  content: "\e60b";
 }
 
 .icon-kankan:before {
@@ -5656,7 +5660,7 @@ body > .mui-progressbar
 }
 
 .icon-youyong2:before {
-  content: "\e60b";
+  content: "\e60c";
 }
 
 .icon-paobuS:before {
@@ -5671,6 +5675,10 @@ body > .mui-progressbar
   content: "\e50a";
 }
 
+.icon-star_light:before {
+  content: "\e504";
+}
+
 .icon-baolingqiu2:before {
   content: "\e60e";
 }
@@ -5680,7 +5688,7 @@ body > .mui-progressbar
 }
 
 .icon-qiuchang1:before {
-  content: "\e60c";
+  content: "\e60f";
 }
 
 .icon-taiqiu3:before {
@@ -5691,12 +5699,16 @@ body > .mui-progressbar
   content: "\e636";
 }
 
+.icon-banxing:before {
+  content: "\e676";
+}
+
 .icon-qita:before {
-  content: "\e60f";
+  content: "\e610";
 }
 
 .icon-sc:before {
-  content: "\e504";
+  content: "\e506";
 }
 
 .icon-zu:before {
@@ -5720,11 +5732,11 @@ body > .mui-progressbar
 }
 
 .icon-test:before {
-  content: "\e506";
+  content: "\e507";
 }
 
 .icon-running-copy:before {
-  content: "\e507";
+  content: "\e508";
 }
 
 .icon-tubiao-qiuchang:before {
@@ -5739,9 +5751,14 @@ body > .mui-progressbar
   content: "\e51e";
 }
 
+.icon-xing:before {
+  content: "\e509";
+}
+
 .icon-location3:before {
   content: "\e520";
 }
+
 .mui-fullscreen
 {
     position: absolute;

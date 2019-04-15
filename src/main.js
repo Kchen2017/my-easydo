@@ -12,6 +12,27 @@ Vue.use(MintUI)
 import './assets/css/mui/dist/css/mui.css'
 import './assets/css/ui.css'
 
+import VuePreview from 'vue-preview'
+ 
+// defalut install
+Vue.use(VuePreview)
+ 
+// with parameters install
+Vue.use(VuePreview, {
+  mainClass: 'pswp--minimal--dark',
+  barsSize: {top: 0, bottom: 0},
+  captionEl: false,
+  fullscreenEl: false,
+  shareEl: false,
+  bgOpacity: 0.85,
+  tapToClose: true,
+  tapToToggleControls: false
+})
+
+import rate from 'vue-rate';
+ 
+Vue.use(rate)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

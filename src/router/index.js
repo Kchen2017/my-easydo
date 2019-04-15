@@ -52,6 +52,11 @@ export default new Router({
 	    	path: '/common/index/who_detail',
 	    	name: "whoDetail",
 	    	component: r => require.ensure([], () => (require('@/components/index/components/whoDetail.vue')))
+	    },
+	    {
+	    	path: '/common/index/imagePre',
+	    	name: "imagePre",
+	    	component: r => require.ensure([], () => (require('@/components/index/components/imagePre.vue')))
 	    }
 	]
 })
