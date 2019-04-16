@@ -1,9 +1,27 @@
 <template>
 	<div class="easy_go">
 		<header class="mui-bar mui-bar-nav">
-			<span class="mui-pull-left titleBar">Easy_go</span>
+			<span class="mui-pull-left mui-title">Easy_go</span>
 	        <a @click="moreFun" class="mui-icon mui-icon-plusempty mui-pull-right" href="javascript:void(0)"></a>
 		</header>
+		<div class="easy_goCon">
+			<div class="mui-card">
+				<ul class="mui-table-view">
+					<li @click="friFlag=!friFlag" class="mui-table-view-cell mui-collapse" :class="{'mui-active': friFlag}">
+						<a class="mui-navigate-right" href="javascript:void(0)">好友</a>
+						<div class="mui-collapse-content">
+							111
+						</div>
+					</li>
+					<li @click="qunFlag=!qunFlag" class="mui-table-view-cell mui-collapse" :class="{'mui-active': qunFlag}">
+						<a class="mui-navigate-right" href="javascript:void(0)">群</a>
+						<div class="mui-collapse-content">
+							222
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
 
 		<!--右上角弹出菜单-->
 	    <div  class="mui-popover detail_topPopover" :class="{'mui-active': isShowMore}" v-if="isShowMore" style="display: block;">
@@ -43,6 +61,8 @@
 		data(){
 			return {
 				isShowMore: false,
+				friFlag: false,
+				qunFlag: false
 			}
 		},
 		methods: {
@@ -53,6 +73,9 @@
 	}
 </script>
 <style>
+	.easy_go{
+		height: 100%;
+	}
 	.mui-popover {
 		height: 300px;
 		width: 117px;
@@ -66,7 +89,8 @@
 		left: auto;
 		right: 6px;
 	}
-	.easy_go .titleBar{
-		line-height: 1;
+	.easy_go .easy_goCon{
+		height: 100%;
+  		padding-top: 3em;
 	}
 </style>

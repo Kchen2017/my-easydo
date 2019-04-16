@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div style="height: 100%">
 		<router-view/>
 		<nav class="mui-bar mui-bar-tab">
 	      <a @click="selectedFun('index')" class="mui-tab-item" :class="{'mui-active': selected=='index'}" href="javascript:void(0)">
