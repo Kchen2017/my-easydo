@@ -4,7 +4,7 @@
 	        <a class="mui-icon mui-icon-camera mui-pull-right" href="javascript:void(0)"></a>
 		</header>
 		<div class="my_con">
-			<div class="my_info">
+			<div @click="goToInfo" class="my_info">
 				<div>
 					<img src="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg" alt="">
 				</div>
@@ -19,6 +19,24 @@
 					</p>
 				</div>
 			</div>
+		 	<ul class="my_operation">
+		 		<li @click="goToCollection">
+		 			<span class="mui-icon icon-shoucang1">收藏</span>
+					<span class="mui-icon mui-icon-arrowright"></span>
+		 		</li>
+		 		<li>
+		 			<span class="mui-icon icon-x">浏览记录</span>
+					<span class="mui-icon mui-icon-arrowright"></span>
+		 		</li>
+		 		<li>
+		 			<span class="mui-icon icon-qianbao2">钱包</span>
+					<span class="mui-icon mui-icon-arrowright"></span>
+		 		</li>
+		 		<li>
+		 			<span class="mui-icon icon-shezhi1">设置</span>
+					<span class="mui-icon mui-icon-arrowright"></span>
+		 		</li>
+		 	</ul>
 		</div>
 	</div>
 </template>
@@ -27,6 +45,18 @@
 		data(){
 			return {
 				
+			}
+		},
+		methods: {
+			goToInfo(){
+				this.$router.push({
+					name: "my_info"
+				})
+			},
+			goToCollection(){
+				this.$router.push({
+					name: "my_collection"
+				})
 			}
 		}
 	}
@@ -57,5 +87,18 @@
     	line-height: 4em;
     	display: flex;
 		justify-content: space-between;
+		align-items: center;
+	}
+	.my_operation{
+		padding: 1em;
+	}
+	.my_operation li {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 3em;
+	}
+	.myIndex .my_operation .mui-icon{
+		font-size: 1em
 	}
 </style>

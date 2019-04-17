@@ -40,8 +40,8 @@
 			<div class="group_tab">
 				<mt-navbar class="page-part" v-model="selected">
 				    <mt-tab-item id="group">群</mt-tab-item>
-				    <mt-tab-item id="talk">论坛</mt-tab-item>
-				    <mt-tab-item id="video">视频</mt-tab-item>
+				    <mt-tab-item id="talk">圈子</mt-tab-item>
+				    <mt-tab-item id="video">王者榜</mt-tab-item>
 			    </mt-navbar>
 			    <mt-tab-container v-model="selected">
 			        <mt-tab-container-item id="group">

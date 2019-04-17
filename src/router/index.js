@@ -57,6 +57,16 @@ export default new Router({
 	    	path: '/common/index/imagePre',
 	    	name: "imagePre",
 	    	component: r => require.ensure([], () => (require('@/components/index/components/imagePre.vue')))
+	    },
+	    {
+	    	path: '/common/my/myCollection',
+	    	name: "my_collection",
+	    	component: r => require.ensure([], () => (require('@/components/my/components/myCollection.vue')))
+	    },
+	    {
+	    	path: '/common/my/myInfo',
+	    	name: "my_info",
+	    	component: r => require.ensure([], () => (require('@/components/my/components/myInfo.vue')))
 	    }
 	]
 })
