@@ -2,15 +2,14 @@
 	<ul   v-infinite-scroll="loadMore"
 		  infinite-scroll-disabled="loading"
 		  infinite-scroll-distance="10">
-		<li v-for="item in listData" class="go_list">
-            <div class="go_list_img">
-            	<img :src="item.imageUrl" style="width: ">
+		<li v-for="item in listData" class="who_list" @click="goDetail(item)">
+            <div class="list_img">
+            	<img :src="item.imageUrl">
             </div>
-            <ul class="go_list_context">
-            	<li>{{item.backCateName}}</li>
-            	<li>{{item.backCateName}}</li>
-            	<li><span class="mui-icon icon-location1">{{item.areaname}}</span></li>
-            </ul>
+            <div class="list_con">
+            	<h3>{{item.backCateName}}</h3>
+            	<p>{{item.backCateName}}</p>
+            </div>
         </li>
 	</ul>
 </template>
@@ -44,6 +43,14 @@ export default {
 			this.list().then(()=>{
 				this.loading = false;
 			})
+		},
+		goDetail(){
+			this.$router.push({
+				name: "whoDetail",
+				query: {
+					id: "jkjkjk"
+				}
+			})
 		}
 	},
 	mounted(){
@@ -51,3 +58,23 @@ export default {
 	}
 }
 </script>
+<style>
+	.who_list{
+		display: flex;
+		justify-content: space-between;
+		padding: 0.3em 1em;
+		align-items: center;
+		text-align: left;
+	}
+	.who_list .list_img img{
+		width: 3em;
+		height: 3em;
+	}
+	.who_list .list_con{
+		height: 3em;
+		width: 16em;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: column;
+	}
+</style>

@@ -30,9 +30,9 @@
 	</div>
 </template>
 <script>
-	import swip from "./components/swipCom.vue"
-	import whereList from "./components/whereList.vue"
-	import whoList from "./components/whoList.vue"
+	import swip from "./components/common/swipCom.vue"
+	import whereList from "./components/where/whereList.vue"
+	import whoList from "./components/who/whoList.vue"
 	import "@/assets/css/index.css"
 	export default {
 		components: {

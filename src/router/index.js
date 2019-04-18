@@ -36,7 +36,7 @@ export default new Router({
 	    {
 	    	path: '/common/index/search',
 	    	name: "search",
-	    	component: r => require.ensure([], () => (require('@/components/index/components/searchPage.vue')))
+	    	component: r => require.ensure([], () => (require('@/components/index/components/search/searchPage.vue')))
 	    },
 	    {
 	    	path: '/common/index/filter',
@@ -46,17 +46,17 @@ export default new Router({
 	    {
 	    	path: '/common/index/where_detail',
 	    	name: "whereDetail",
-	    	component: r => require.ensure([], () => (require('@/components/index/components/whereDetail.vue')))
+	    	component: r => require.ensure([], () => (require('@/components/index/components/where/whereDetail.vue')))
 	    },
 	    {
 	    	path: '/common/index/who_detail',
 	    	name: "whoDetail",
-	    	component: r => require.ensure([], () => (require('@/components/index/components/whoDetail.vue')))
+	    	component: r => require.ensure([], () => (require('@/components/index/components/who/whoDetail.vue')))
 	    },
 	    {
 	    	path: '/common/index/imagePre',
 	    	name: "imagePre",
-	    	component: r => require.ensure([], () => (require('@/components/index/components/imagePre.vue')))
+	    	component: r => require.ensure([], () => (require('@/components/index/components/common/imagePre.vue')))
 	    },
 	    {
 	    	path: '/common/my/myCollection',
