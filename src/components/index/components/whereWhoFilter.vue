@@ -18,6 +18,11 @@
 		      @changeMainItem="handleChangeMainItem" 
 		      @changeSelect="changeData">
 		    </filter-bar>
+		    <div class="list_con">
+		    	<where-list v-if="typefilter=='where'"  ref="where"></where-list>
+		    	<who-list v-else  ref="who"></who-list>
+		    </div>
+		    
 		</div>
 	</div>
 </template>
@@ -25,14 +30,20 @@
 <script>
 	import FilterBar from 'vue-filter-bar'
 	import barMenus from '@/common/barMenus'
+	import whereList from "./where/whereList.vue"
+	import whoList from "./who/whoList.vue"
+	import "@/assets/css/index.css"
 	export default {
 		components: {
-			FilterBar
+			FilterBar,
+			whereList,
+			whoList
 		},
 		data(){
 			return {
 				inputTip: "",
-				barMenus: barMenus
+				barMenus: barMenus,
+				typefilter: "where"
 			}
 		},
 		methods: {
@@ -98,5 +109,9 @@
 	}
 	.filter_context .filterbar{
 		position: relative;
+	}
+	.list_con{
+		height: 100%;
+    	overflow-y: scroll;
 	}
 </style>

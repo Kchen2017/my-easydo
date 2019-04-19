@@ -67,6 +67,11 @@ export default new Router({
 	    	path: '/common/my/myInfo',
 	    	name: "my_info",
 	    	component: r => require.ensure([], () => (require('@/components/my/components/myInfo.vue')))
+	    },
+	    {
+	    	path: '/common/easy_do/myInfo',
+	    	name: "Easy_talk",
+	    	component: r => require.ensure([], () => (require('@/components/easy_go/components/EasyTalk.vue')))
 	    }
 	]
 })
