@@ -13,30 +13,28 @@
 			</div>
 			<div class="index_pic">
 				<p>精选</p>
-				<img src="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg" alt="">
+				<img src="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg">
 			</div>
-			<div class="go_recommend">
-				<mt-navbar v-model="selected">
-					<mt-tab-item id="where">找场地</mt-tab-item>
-					<mt-tab-item id="who">找局</mt-tab-item>
-				</mt-navbar>
-				<div style="padding: 10px 10px;">
-					<div id="segmentedControl" class="mui-segmented-control">
-						<a @click="selected='where'" class="mui-control-item" :class="{'mui-active': selected=='where'}">找场地</a>
-						<a @click="selected='who'" class="mui-control-item" :class="{'mui-active': selected=='who'}">找局</a>
-					</div>
+			<div class="go_recommend" id="searchBar">
+				<div  class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary" style="padding: 10px 10px;height: 4em" :class="{'isfixed': searchBarFixed}">
+					<a @click="selected='where'" class="mui-control-item " :class="{'mui-active': selected=='where'}">
+						找场地
+					</a>
+					<a @click="selected='who'" class="mui-control-item" :class="{'mui-active': selected=='who'}">
+						找局
+					</a>
 				</div>
-
-				<div>
-					<div class="mui-control-content" :class="{'mui-active': selected=='where'}">
-						<div class="mui-scroll-wrapper">
+				<div  style="height: 100%;">
+					<div  class="mui-slider-item mui-control-content" :class="{'mui-active': selected=='where'}" style="height: 100%">
+						<div class="mui-scroll-wrapper" style="height: 100%">
 							<div class="mui-scroll">
 								<where-list  ref="where"></where-list>
 							</div>
 						</div>
 					</div>
-					<div class="mui-control-content" :class="{'mui-active': selected=='who'}">
-						<div class="mui-scroll-wrapper">
+
+					<div  class="mui-slider-item mui-control-content" :class="{'mui-active': selected=='who'}" style="height: 100%">
+						<div class="mui-scroll-wrapper" style="height: 100%">
 							<div class="mui-scroll">
 								<who-list  ref="who"></who-list>
 							</div>
@@ -44,15 +42,7 @@
 					</div>
 				</div>
 				
-
-				<!-- <mt-tab-container v-model="selected">
-				    <mt-tab-container-item id="where">
-				    	<where-list  ref="where"></where-list>
-				    </mt-tab-container-item>
-				    <mt-tab-container-item id="who">
-				    	<who-list  ref="who"></who-list>
-				    </mt-tab-container-item>
-				</mt-tab-container> -->
+				
 			</div>
 		</div>
 	</div>
@@ -71,7 +61,8 @@
 		data(){
 			return {
 				selected: "where",
-				gpsCity: this.$route.query.city || "北京"
+				gpsCity: this.$route.query.city || "北京",
+				searchBarFixed: false
 			}
 		},
 		methods: {
@@ -84,6 +75,13 @@
 				this.$router.push({
 					name: "search"
 				})
+			},
+
+			handleScroll () {
+			  	let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+			 	let offsetTop = document.querySelector('#searchBar').offsetTop
+			 	offsetTop-scrollTop<=65 ? this.searchBarFixed = true : this.searchBarFixed = false
+			 	console.log(offsetTop-scrollTop)
 			}
 		},
 		watch:{
@@ -94,6 +92,12 @@
 					// this.$refs.who.list(newVal)
 				}
 			}
+		},
+		mounted(){
+			window.addEventListener('scroll', this.handleScroll)
+		},		
+		destroyed () {
+		  	window.removeEventListener('scroll', this.handleScroll)
 		}
 	}
 </script>
@@ -124,5 +128,16 @@
 	.go_content .index_pic img{
 		width: 100%;
 		height: 7em;
+	}
+	.go_recommend .isfixed{
+		position: fixed;
+		background-color: #fff;
+		top:4em;
+    	z-index:999;
+	}
+	.go_recommend .scroll_con{
+		position: fixed;
+		top: 8em;
+		width: 100%;
 	}
 </style>
