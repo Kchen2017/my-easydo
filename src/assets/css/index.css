@@ -7,6 +7,7 @@
 }
 .go_content .go_swip{
 	height: 6em;
+	background-color: #fff;
 }
 
 .go_content .go_swip .go_swipLabel {
@@ -20,16 +21,21 @@
 }
 .headerstyle{
 	height: 4em;
+	background-color: #5eaef3;
 }
 .headerstyle .mui-pull-left{
 	font-size: 1em;
 	margin-top: 1em;
+	color: #fff;
 }
 .headerstyle .mui-search {
     width: 17em;
     left: 3.5em;
     bottom: 2.2em;
     height: 3em;
+}
+.headerstyle .mui-search input{
+	background-color: #fff;
 }
 .headerstyle .mui-icon-search {
     position: absolute;
@@ -83,8 +89,10 @@
 .go_recommend{
 	height: 26em;
     overflow: hidden;
+    background-color: #fff;
 }
 .go_recommend .mint-tab-container{
 	height: 30.2em;
-	overflow-y: scroll
+	overflow-y: scroll;
+	margin-top: 0.3em;
 }

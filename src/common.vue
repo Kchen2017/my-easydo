@@ -1,7 +1,7 @@
 <template>
 	<div style="height: 100%">
 		<router-view/>
-		<nav class="mui-bar mui-bar-tab">
+		<nav class="mui-bar mui-bar-tab" style="background-color: #fff">
 	      <a @click="selectedFun('index')" class="mui-tab-item" :class="{'mui-active': selected=='index'}" href="javascript:void(0)">
 	        <span class="mui-icon icon-qiuchang1"></span>
 	        <span class="mui-tab-label">首页</span>

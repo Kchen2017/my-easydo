@@ -11,20 +11,48 @@
 			<div class="go_swip">
 				<swip></swip>
 			</div>
+			<div class="index_pic">
+				<p>精选</p>
+				<img src="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg" alt="">
+			</div>
 			<div class="go_recommend">
 				<mt-navbar v-model="selected">
-					<mt-tab-item id="where">Go Where</mt-tab-item>
-					<mt-tab-item id="who">With Who</mt-tab-item>
+					<mt-tab-item id="where">找场地</mt-tab-item>
+					<mt-tab-item id="who">找局</mt-tab-item>
 				</mt-navbar>
+				<div style="padding: 10px 10px;">
+					<div id="segmentedControl" class="mui-segmented-control">
+						<a @click="selected='where'" class="mui-control-item" :class="{'mui-active': selected=='where'}">找场地</a>
+						<a @click="selected='who'" class="mui-control-item" :class="{'mui-active': selected=='who'}">找局</a>
+					</div>
+				</div>
 
-				<mt-tab-container v-model="selected">
+				<div>
+					<div class="mui-control-content" :class="{'mui-active': selected=='where'}">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<where-list  ref="where"></where-list>
+							</div>
+						</div>
+					</div>
+					<div class="mui-control-content" :class="{'mui-active': selected=='who'}">
+						<div class="mui-scroll-wrapper">
+							<div class="mui-scroll">
+								<who-list  ref="who"></who-list>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+
+				<!-- <mt-tab-container v-model="selected">
 				    <mt-tab-container-item id="where">
 				    	<where-list  ref="where"></where-list>
 				    </mt-tab-container-item>
 				    <mt-tab-container-item id="who">
 				    	<who-list  ref="who"></who-list>
 				    </mt-tab-container-item>
-				</mt-tab-container>
+				</mt-tab-container> -->
 			</div>
 		</div>
 	</div>
@@ -69,3 +97,32 @@
 		}
 	}
 </script>
+<style>
+	.go_content .index_pic{
+		padding: 1em;
+		background-color: #fff;
+		margin-top: 0.5em;
+	}
+	.go_content .index_pic p{
+		text-align: left;
+		height: 2em;
+		line-height: 2em;
+		position: relative;
+		padding-left:1em; 
+		margin-bottom: 1em;
+	}
+	.go_content .index_pic p:before{
+		content: "";
+	    position: absolute;
+	    bottom: 0em;
+	    left: 0;
+	    width: 0em;
+	    height: 2em;
+	    border: 2px solid #bcb7b7;
+
+	}
+	.go_content .index_pic img{
+		width: 100%;
+		height: 7em;
+	}
+</style>
