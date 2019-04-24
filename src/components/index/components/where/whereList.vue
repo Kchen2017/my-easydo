@@ -1,17 +1,19 @@
 <template>
 	<ul   v-infinite-scroll="loadMore"
 		  infinite-scroll-disabled="loading"
-		  infinite-scroll-distance="10">
+		  infinite-scroll-distance="10" class="go_loadinglist">
 		<li v-for="item in listData" @click="goToDetail(item)" class="go_list">
             <div class="go_list_img">
-            	<img :src="item.imageUrl" style="width: ">
+            	<img :src="item.imageUrl" >
             </div>
             <ul class="go_list_context">
             	<li>{{item.backCateName}}</li>
             	<li>{{item.backCateName}}</li>
             	<li><span class="mui-icon icon-location1">{{item.areaname}}</span></li>
+            	<li><span class="mui-icon icon-qianbao1">线上预定</span><span>￥20/人</span></li>
             </ul>
         </li>
+       	<p v-if="isFinish">哥..这下这没了</p>
 	</ul>
 </template>
 <script>
@@ -20,7 +22,8 @@ export default {
 		return{
 			listData: [],
 			pageNumber: 1,
-			totleCount: 0
+			totleCount: 0,
+			isFinish: false
 	    }
 	},
 	methods: {
@@ -38,7 +41,10 @@ export default {
 			}) 
 		},
 		loadMore() {
-			if(this.totleCount/10 <= this.pageNumber) return
+			if(this.totleCount/10 <= this.pageNumber) {
+				this.isFinish = true; 
+				return
+			}
 			this.loading = true;
 			this.pageNumber++
 			this.list().then(()=>{
@@ -55,7 +61,13 @@ export default {
 		}
 	},
 	mounted(){
-		this.list()
 	}
 }
 </script>
+<style>
+	.go_loadinglist p{
+		background-color: #ebe9e9;
+		height: 2em;
+	    line-height: 2em;
+	}
+</style>

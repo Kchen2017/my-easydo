@@ -7,8 +7,10 @@
             	<img :src="item.imageUrl">
             </div>
             <div class="list_con">
-            	<h3>{{item.backCateName}}</h3>
-            	<p>{{item.backCateName}}</p>
+            	<h5>龙骑士</h5>
+            	<p>时间：2019.4.24</p>
+            	<p>地点：凯翔篮球馆</p>
+            	<p>标签：<mt-badge size="small">篮球</mt-badge>&ensp;<mt-badge size="small">业余</mt-badge></p>
             </div>
         </li>
 	</ul>
@@ -67,12 +69,13 @@ export default {
 		text-align: left;
 	}
 	.who_list .list_img img{
-		width: 3em;
-		height: 3em;
+		width: 6em;
+		height: 6em;
+		border-radius: 0.5em;
 	}
 	.who_list .list_con{
-		height: 3em;
-		width: 16em;
+		padding-left: 1em;
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		flex-direction: column;

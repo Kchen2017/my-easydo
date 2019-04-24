@@ -49,6 +49,11 @@ export default new Router({
 	    	component: r => require.ensure([], () => (require('@/components/index/components/where/whereDetail.vue')))
 	    },
 	    {
+	    	path: '/common/index/zugeju',
+	    	name: "zugeju",
+	    	component: r => require.ensure([], () => (require('@/components/index/components/where/zugejuCom.vue')))
+	    },
+	    {
 	    	path: '/common/index/who_detail',
 	    	name: "whoDetail",
 	    	component: r => require.ensure([], () => (require('@/components/index/components/who/whoDetail.vue')))

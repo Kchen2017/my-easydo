@@ -15,7 +15,7 @@
 				<p>精选</p>
 				<img src="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg">
 			</div>
-			<div class="go_recommend" id="searchBar">
+			<div class="go_recommend" id="searchBar" style="padding-bottom: 3em;">
 				<div  class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary" style="padding: 10px 10px;height: 4em" :class="{'isfixed': searchBarFixed}">
 					<a @click="selected='where'" class="mui-control-item " :class="{'mui-active': selected=='where'}">
 						找场地
@@ -24,25 +24,15 @@
 						找局
 					</a>
 				</div>
-				<div  style="height: 100%;">
-					<div  class="mui-slider-item mui-control-content" :class="{'mui-active': selected=='where'}" style="height: 100%">
-						<div class="mui-scroll-wrapper" style="height: 100%">
-							<div class="mui-scroll">
-								<where-list  ref="where"></where-list>
-							</div>
-						</div>
+				<div :class="{'scroll_con': searchBarFixed}">
+					<div  class="mui-slider-item mui-control-content" :class="{'mui-active': selected=='where'}">
+						<where-list  ref="where"></where-list>
 					</div>
 
-					<div  class="mui-slider-item mui-control-content" :class="{'mui-active': selected=='who'}" style="height: 100%">
-						<div class="mui-scroll-wrapper" style="height: 100%">
-							<div class="mui-scroll">
-								<who-list  ref="who"></who-list>
-							</div>
-						</div>
+					<div  class="mui-slider-item mui-control-content" :class="{'mui-active': selected=='who'}">
+						<who-list  ref="who"></who-list>
 					</div>
 				</div>
-				
-				
 			</div>
 		</div>
 	</div>
@@ -60,7 +50,7 @@
 		},
 		data(){
 			return {
-				selected: "where",
+				selected: "",
 				gpsCity: this.$route.query.city || "北京",
 				searchBarFixed: false
 			}
@@ -81,19 +71,19 @@
 			  	let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
 			 	let offsetTop = document.querySelector('#searchBar').offsetTop
 			 	offsetTop-scrollTop<=65 ? this.searchBarFixed = true : this.searchBarFixed = false
-			 	console.log(offsetTop-scrollTop)
 			}
 		},
 		watch:{
 			selected(newVal){
 				if(newVal == "where"){
-					// this.$refs.where.list(newVal)
+					this.$refs.where.list()
 				}else if(newVal == "who"){
-					// this.$refs.who.list(newVal)
+					this.$refs.who.list()
 				}
 			}
 		},
 		mounted(){
+			this.selected = "where"
 			window.addEventListener('scroll', this.handleScroll)
 		},		
 		destroyed () {
@@ -136,8 +126,6 @@
     	z-index:999;
 	}
 	.go_recommend .scroll_con{
-		position: fixed;
-		top: 8em;
-		width: 100%;
+		padding-top: 8em
 	}
 </style>
