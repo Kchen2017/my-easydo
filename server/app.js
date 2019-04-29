@@ -3,6 +3,9 @@ var request = require("request")
 var mysql = require('./baseData/mysql')
 
 var app = express()
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var session = require('express-session');
 
 app.use("*", (req, res, next)=>{
     // 设置请求头为允许跨域
@@ -15,6 +18,20 @@ app.use("*", (req, res, next)=>{
     next();
 })
 
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(cookieParser());
+
+app.use(session({
+    secret :  'secret', // 对session id 相关的cookie 进行签名
+    resave : true,
+    saveUninitialized: false, // 是否保存未初始化的会话
+    cookie : {
+        maxAge : 1000 * 60 * 3, // 设置 session 的有效时间，单位毫秒
+    },
+}));
+
 var goWhereApi = require('./api/goWhere')
 var myApi = require('./api/my')
 var withWhoApi = require('./api/withWho')
@@ -24,26 +41,6 @@ app.use("/my", myApi)
 app.use("/withWho", withWhoApi)
 
 
-
-app.get("/getMovieList", (req, res, next) => {
-    var type = req.query.type;
-    var url = 'https://api.douban.com/v2/movie/' + type;
-
-    request(url, (err, response, body) => {
-        res.send(body)
-    })
-})
-
-// 获取电影详细
-app.get('/getditail', function (req, res) {
-    var id = req.query.id;
-    var url = 'https://api.douban.com/v2/movie/subject/' + id;
-    request(url, function (error, response, body) {
-        // body 中存放的，就是我们要获取的真实数据
-        // console.log(body);
-        res.send(body);
-    });
-});
 
 app.listen(3090, function () {
     console.log('server运行在 http://127.0.0.1:3090');

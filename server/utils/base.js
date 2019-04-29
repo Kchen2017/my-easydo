@@ -101,3 +101,29 @@ exports.fromQueryOrBody=(req, name, isTranscoding,isReplace)=> {
 
     return parmVal;
 }
+
+exports.getFiltersInReq=(req)=>{
+    let filtersKeyObj = {}
+    let filtersValObj = {}
+    let filtersObj = {}
+    let queryObj = req.query;
+    for(let item in queryObj){
+
+        let arrTemp = item.split(".")
+
+        if(arrTemp[0]==="filters"){
+
+            if(arrTemp[2]==="name"){
+                filtersKeyObj[arrTemp[1]]=queryObj[item]
+            }
+            if(arrTemp[2]==="value"){
+                filtersValObj[arrTemp[1]]=queryObj[item]
+            }
+
+        }
+    }
+    for(let key in filtersKeyObj){
+        filtersObj[filtersKeyObj[key]] = filtersValObj[key]
+    }
+    return filtersObj
+}
