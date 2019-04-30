@@ -10,6 +10,10 @@
 	        <span class="mui-icon icon-tubiaozhizuomoban"></span>
 	        <span class="mui-tab-label">Easy Do</span>
 	      </a>
+	      <a @click="selectedFun('gogo')" class="mui-tab-item" :class="{'mui-active': selected=='easy_go'}" href="javascript:void(0)">
+	        <span class="mui-icon icon-tubiaozhizuomoban"></span>
+	        <span class="mui-tab-label">Easy Do</span>
+	      </a>
 	      <a @click="selectedFun('my')" class="mui-tab-item" :class="{'mui-active': selected=='my'}" href="javascript:void(0)">
 	        <span class="mui-icon icon-xiaolian"></span>
 	        <span class="mui-tab-label">我的</span>

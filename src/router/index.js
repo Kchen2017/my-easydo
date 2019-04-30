@@ -26,6 +26,10 @@ export default new Router({
 		    	path: 'my',
 		    	name: "my",
 		    	component: r => require.ensure([], () => (require('@/components/my/index.vue')))
+		    },{
+		    	path: 'gogo',
+		    	name: "gogo",
+		    	component: r => require.ensure([], () => (require('@/components/go/index.vue')))
 		    }]
 	    },
 	    {
