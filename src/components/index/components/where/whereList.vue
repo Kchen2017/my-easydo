@@ -7,9 +7,9 @@
             	<img :src="item.imageUrl" >
             </div>
             <ul class="go_list_context">
-            	<li>{{item.backCateName}}</li>
-            	<li>{{item.backCateName}}</li>
-            	<li><span class="mui-icon icon-location1">{{item.areaname}}</span></li>
+            	<li>{{item.name}}</li>
+            	<li>{{item.type}}</li>
+            	<li><span class="mui-icon icon-location1">{{item.address}}</span></li>
             	<li><span class="mui-icon icon-qianbao1">线上预定</span><span>￥20/人</span></li>
             </ul>
         </li>
