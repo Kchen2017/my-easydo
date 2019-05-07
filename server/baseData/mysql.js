@@ -23,9 +23,9 @@ var insertData = function(table, data){
 		})
 }
 //查询全部数据
-var searchData = function(table){
+var searchData = function(table, filter){
 	return new Promise((resolve, reject)=>{
-			connection.query('select * from ?', table, function(err, result) {
+			connection.query('select * from ?? where ?', [table, filter], function(err, result) {
 			    if (err) {
 			    	reject(err)
 			    }

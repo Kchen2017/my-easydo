@@ -12,7 +12,7 @@
 				<span class="mui-icon mui-icon-image flag">20</span>
 			</div>
 			<div class="title">
-				<h4>不服就干场</h4>
+				<h4>{{detail.name||"--"}}</h4>
 				<p>
 					热度：<span class="mui-icon icon-star_light"></span>
 					<span class="mui-icon icon-star_light"></span>
@@ -23,7 +23,7 @@
 					<span>￥30/人</span>
 				</p>
 				<p>
-					<span>篮球</span>&ensp;&ensp;&ensp;<span>朝阳</span>
+					<span>篮球</span>&ensp;&ensp;&ensp;<span>{{detail.city}}</span>
 				</p>
 				<div @click="goZu" class="mui-btn mui-btn-primary zugejuBtn">
 					组<br>个<br>局
@@ -37,7 +37,7 @@
 			</div>
 			<div class="address">
 				<span class="mui-icon mui-icon-location"></span>
-				<span>北辰西路8号院1号楼国家会议中心大酒店2楼(近鸟巢)</span>
+				<span>{{detail.address}}</span>
 				<span class="mui-icon mui-icon-phone"></span>
 			</div>
 			<div id="searchBar" class="group_tab">
@@ -80,20 +80,6 @@
 						</li>
 						<li class="mui-table-view-cell"><a href="javascript:void(0)">Item3</a>
 						</li>
-						<li class="mui-table-view-cell"><a href="javascript:void(0)">Item4</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="javascript:void(0)">Item5</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="javascript:void(0)">Item6</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="javascript:void(0)">Item7</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="javascript:void(0)">Item8</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="javascript:void(0)">Item9</a>
-						</li>
-						<li class="mui-table-view-cell"><a href="javascript:void(0)">Item10</a>
-						</li>
 					</ul>
 				</div>
 			</div>
@@ -104,6 +90,7 @@
 </template>
 <script>
 	import whoList from "../who/whoList.vue"
+	import goWhereApi from "../../../../api/goWhere"
 	export default {
 		components:{
 			whoList
@@ -112,10 +99,18 @@
 			return{
 				isShowMore: false,
 				selected: 'group',
-				searchBarFixed: false
+				searchBarFixed: false,
+				detail: {}
 			}
 		},
 		methods: {
+			getDetail(){
+				goWhereApi.getDetail({
+					id: this.$route.params.id
+				}).then(result=>{
+					this.detail = result.detailData
+				})
+			},
 			goToindex(){
 				this.$router.go(-1)
 			},
@@ -140,6 +135,7 @@
 			}
 		},
 		mounted(){
+			this.getDetail()
 			window.addEventListener('scroll', this.handleScroll)
 		},		
 		destroyed () {
@@ -189,7 +185,7 @@
 	}
 	.detailContent .title .zugejuBtn{
 		position: absolute;
-	    top: 1.5em;
+	    top: 3.5em;
 	    right: 1.3em;
 	    width: 3em;
 	    height: 5em;
@@ -268,7 +264,7 @@
 	.whereDetail .address span:nth-child(2):before{
 		content: "";
 	    position: absolute;
-	    bottom: 0.5em;
+	    bottom: -0.5em;
 	    width: 0em;
 	    height: 1.5em;
 	    right: 0.5em;

@@ -32,9 +32,22 @@ router.all("/list", async function(req, res, next){
     }catch(err){
         res.json({status:-1,msg:err});
     }
-    
-    
-    
+})
+
+router.all("/detail", async function(req, res, next){
+    var id = fromQueryOrBody(req, "id")
+
+    try{
+        var dbData = await db.searchData("wherelist", {id: id})
+
+        var resListData = {
+            detailData: dbData[0]
+        }
+        logger.info(util.format('gowhere  list [pin: %s] [result: %s]', req.pin, JSON.stringify(resListData).toString()))
+        res.json(resListData);
+    }catch(err){
+        res.json({status:-1,msg:err});
+    }
 })
 
 module.exports = router;

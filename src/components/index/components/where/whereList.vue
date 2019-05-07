@@ -17,6 +17,7 @@
 	</ul>
 </template>
 <script>
+	import goWhereApi from "../../../../api/goWhere"
 export default {
 	data(){
 		return{
@@ -28,17 +29,13 @@ export default {
 	},
 	methods: {
 		list(){
-			return new Promise((resolve, reject) => {
-				fetch('http://127.0.0.1:3090/goWhere/list?pageSize=10&pageNumber='+this.pageNumber)
-				  .then((response) => {
-				    return response.json();
-				  })
-				  .then((myJson) => {
-				  	this.totleCount = myJson.totleCount
-				    this.listData = this.listData.concat(myJson.listData)
-				    resolve()
-				  });
-			}) 
+			goWhereApi.getList({
+				pageSize: 10,
+				pageNumber: this.pageNumber
+			}).then(result => {
+				this.totleCount = result.totleCount
+				this.listData = this.listData.concat(result.listData)
+			})
 		},
 		loadMore() {
 			if(this.totleCount/10 <= this.pageNumber) {
@@ -54,8 +51,8 @@ export default {
 		goToDetail(item){
 			this.$router.push({
 				name: "whereDetail",
-				query: {
-					id: item.backCateName
+				params: {
+					id: item.id
 				}
 			})
 		}

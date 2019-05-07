@@ -48,7 +48,7 @@ export default new Router({
 	    	component: r => require.ensure([], () => (require('@/components/index/components/whereWhoFilter.vue')))
 	    },
 	    {
-	    	path: '/common/index/where_detail',
+	    	path: '/common/index/where_detail/:id',
 	    	name: "whereDetail",
 	    	component: r => require.ensure([], () => (require('@/components/index/components/where/whereDetail.vue')))
 	    },

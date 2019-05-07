@@ -1,6 +1,6 @@
 <template>
 	<div class="zugeju">
-		<span class="mui-icon mui-icon-closeempty closeIcn"></span>
+		<span @click="$router.go(-1)" class="mui-icon mui-icon-closeempty closeIcn"></span>
 		<ul>
 			<li>
 				<span class="title">群标志：</span>
@@ -10,11 +10,24 @@
 				<span class="title">群名：</span>
 				<input type="text" placeholder="请输入群名" max=10>
 			</li>
-			<li><span class="title">人数：</span></li>
-			<li><span class="title">付费方式：</span></li>
-			<li><span class="title">标签：</span></li>
-			<li><span class="title">签名：</span></li>
-			<li><span class="title">时间：</span></li>
+			<li>
+				<span class="title">人数：</span>
+				<input type="text" placeholder="请输入群名" max=10>
+			</li>
+			<li>
+				<span class="title">付费方式：</span>
+			</li>
+			<li>
+				<span class="title">标签：</span>
+				<input type="text" placeholder="请输入群名" max=10>
+			</li>
+			<li>
+				<span class="title">签名：</span>
+				<input type="text" placeholder="请输入群名" max=10>
+			</li>
+			<li>
+				<span class="title">时间：</span>
+			</li>
 			<li>
 				<span class="title">其他：</span>
 				<textarea rows="3" cols="20"></textarea>
