@@ -1,9 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+var localStore = require('store');
+import VueCookie from 'vue-cookie'
 
 Vue.use(Router)
 
-export default new Router({
+const routerlist =  new Router({
 	mode: 'history',
     base: '/host/',
 	routes: [
@@ -81,6 +83,30 @@ export default new Router({
 	    	path: '/common/easy_do/myInfo',
 	    	name: "Easy_talk",
 	    	component: r => require.ensure([], () => (require('@/components/easy_go/components/EasyTalk.vue')))
-	    }
+		},
+		{
+			path: '/login',
+			name: 'login',
+			component: r => require.ensure([], () => (require('@/components/login/login.vue')))
+		},
+		{
+			path: '/setup',
+			name: 'setup',
+			component: r => require.ensure([], () => (require('@/components/login/setup.vue')))
+		}
 	]
 })
+
+routerlist.beforeResolve((to, from, next) => {
+	if(to.path === "/login" || to.path === "/setup"){
+		return next()
+	}
+	var islogined = VueCookie.get("loginflag")
+	if(islogined){
+		next()
+	}else{
+		next("/login")
+	}
+})
+
+export default routerlist

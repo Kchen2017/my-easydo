@@ -2,9 +2,9 @@
 	<ul   v-infinite-scroll="loadMore"
 		  infinite-scroll-disabled="loading"
 		  infinite-scroll-distance="10" class="go_loadinglist">
-		<li v-for="item in listData" @click="goToDetail(item)" class="go_list">
+		<li v-for="item in listData" :key="item" @click="goToDetail(item)" class="go_list">
             <div class="go_list_img">
-            	<img :src="item.imageUrl" >
+            	<img :src="item&&item.imageUrl" >
             </div>
             <ul class="go_list_context">
             	<li>{{item.name}}</li>
@@ -33,8 +33,11 @@ export default {
 				pageSize: 10,
 				pageNumber: this.pageNumber
 			}).then(result => {
-				this.totleCount = result.totleCount
-				this.listData = this.listData.concat(result.listData)
+				if(result && result.listData){
+					this.totleCount = result.totleCount
+					this.listData = this.listData.concat(result.listData)
+				}
+				
 			})
 		},
 		loadMore() {
