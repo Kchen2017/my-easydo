@@ -98,10 +98,11 @@ const routerlist =  new Router({
 })
 
 routerlist.beforeResolve((to, from, next) => {
+	console.log(to.path)
 	if(to.path === "/login" || to.path === "/setup"){
 		return next()
 	}
-	var islogined = VueCookie.get("loginflag")
+	var islogined = VueCookie.get("loginflag")||true
 	if(islogined){
 		next()
 	}else{

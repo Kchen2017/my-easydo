@@ -6,11 +6,11 @@
 	        <span class="mui-icon icon-qiuchang1"></span>
 	        <span class="mui-tab-label">首页</span>
 	      </a>
-	      <a @click="selectedFun('easy_go')" class="mui-tab-item" :class="{'mui-active': selected=='easy_go'}" href="javascript:void(0)">
-	        <span class="mui-icon icon-tubiaozhizuomoban"></span>
-	        <span class="mui-tab-label">Easy Do</span>
+				<a @click="selectedFun('gogo')" class="mui-tab-item" :class="{'mui-active': selected=='gogo'}" href="javascript:void(0)">
+	        <span class="mui-icon icon-paobu1"></span>
+	        <span class="mui-tab-label">Go Go</span>
 	      </a>
-	      <a @click="selectedFun('gogo')" class="mui-tab-item" :class="{'mui-active': selected=='easy_go'}" href="javascript:void(0)">
+	      <a @click="selectedFun('easy_go')" class="mui-tab-item" :class="{'mui-active': selected=='easy_go'}" href="javascript:void(0)">
 	        <span class="mui-icon icon-tubiaozhizuomoban"></span>
 	        <span class="mui-tab-label">Easy Do</span>
 	      </a>

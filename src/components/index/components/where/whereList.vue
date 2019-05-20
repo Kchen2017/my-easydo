@@ -2,7 +2,7 @@
 	<ul   v-infinite-scroll="loadMore"
 		  infinite-scroll-disabled="loading"
 		  infinite-scroll-distance="10" class="go_loadinglist">
-		<li v-for="item in listData" :key="item" @click="goToDetail(item)" class="go_list">
+		<li v-for="item in listData" :key="item.id" @click="goToDetail(item)" class="go_list">
             <div class="go_list_img">
             	<img :src="item&&item.imageUrl" >
             </div>
