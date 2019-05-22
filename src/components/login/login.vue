@@ -24,6 +24,7 @@
     </div>
 </template>
 <script>
+import loginApi from "../../api/login"
 export default {
     data(){
         return {
@@ -40,7 +41,13 @@ export default {
             })
         },
         sendLogin(){
-            
+            alert(1)
+            loginApi.loginPost({
+                userPin: this.loginFrom.pin,
+                password: this.loginFrom.password
+            }).then(res => {
+                console.log(res)
+            })
         }
     }
 }

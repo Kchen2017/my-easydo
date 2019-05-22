@@ -51,7 +51,8 @@ app.use("/login", function(req, res, next){
         userPin: userPin,
         password: password
     }
-    db.getListbyPage("userslist", filters ,0, 10).then(res => {
+    console.log(filters)
+    db.searchData("userList", filters).then(res => {
         if(res){
             res.json({
                 code: 200,

@@ -58,10 +58,10 @@
 					</div>
 
 					<div  class="mui-slider-item mui-control-content" :class="{'mui-active': selected=='part'}">
-						圈子
+						<where-quan></where-quan>
 					</div>
 					<div  class="mui-slider-item mui-control-content" :class="{'mui-active': selected=='kinglist'}">
-						王者榜
+						<where-king-list></where-king-list>
 					</div>
 				</div>
 			</div>	
@@ -90,10 +90,14 @@
 </template>
 <script>
 	import whoList from "../who/whoList.vue"
+	import whereQuan from './whereQuan.vue'
+	import whereKingList from './wherekinglist.vue'
 	import goWhereApi from "../../../../api/goWhere"
 	export default {
 		components:{
-			whoList
+			whoList,
+			whereQuan,
+			whereKingList
 		},
 		data(){
 			return{

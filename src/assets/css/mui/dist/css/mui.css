@@ -5027,6 +5027,14 @@ body > .mui-progressbar
     src: url('../fonts/iconfontball.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: Muiicons;
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('../fonts/iconfontball1.ttf') format('truetype');
+}
+
 .mui-icon
 {
     font-family: Muiicons;
@@ -5886,6 +5894,42 @@ body > .mui-progressbar
 .icon-shezhi1:before {
   content: "\e50f";
 }
+
+.icon-gengduomore12:before {
+    content: "\e60a";
+  }
+/* ball1 */
+  .icon-buoumaotubiao16:before {
+    content: "\e60f";
+  }
+  
+  .icon-dianzan:before {
+    content: "\e60b";
+  }
+  
+  .icon-more-br:before {
+    content: "\e649";
+  }
+  
+  .icon-dianzan1:before {
+    content: "\e65c";
+  }
+  
+  .icon-gengduo:before {
+    content: "\e8a6";
+  }
+  
+  .icon-more:before {
+    content: "\e639";
+  }
+  
+  .icon-like:before {
+    content: "\e61d";
+  }
+  
+  .icon-gengduo1:before {
+    content: "\e60e";
+  }
 
 .mui-fullscreen
 {
