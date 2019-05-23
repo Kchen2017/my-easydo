@@ -93,6 +93,11 @@ const routerlist =  new Router({
 			path: '/setup',
 			name: 'setup',
 			component: r => require.ensure([], () => (require('@/components/login/setup.vue')))
+		},
+		{
+			path: '/common/index/king',
+			name: 'kingDetail',
+			component: r => require.ensure([], () => (require('@/components/index/components/where/kingDetail.vue')))
 		}
 	]
 })

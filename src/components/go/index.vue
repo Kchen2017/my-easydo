@@ -1,13 +1,33 @@
 <template>
   <div class="mapCon">
-    <div id="allmap" ref="allmap"></div>
+    	<header class="mui-bar mui-bar-nav">
+	        <span class="mui-pull-left mui-title" style="color: #fff">EasyGo</span>
+	    </header>
+      <div class="mapcontainer">
+        <filter-bar 
+		      top="0" 
+		      :bar-menus="barMenus" 
+		      @showDialog="handleShowDialog" 
+		      @closeDialog="handleCloseDialog" 
+		      @changeTab="handleChangeTab"
+		      @changeMainItem="handleChangeMainItem" 
+		      @changeSelect="changeData">
+		    </filter-bar>
+        <div id="allmap" ref="allmap"></div>
+      </div>
+    
   </div>
 </template>
 <script>
+import FilterBar from 'vue-filter-bar'
+import barMenus from '@/common/barMenus'
 export default {
+  components: {
+    FilterBar
+  },
   data() {
     return {
-
+      barMenus
     }
   },
   methods: {
@@ -38,7 +58,22 @@ export default {
         var point = new BMap.Point(sw.lng + lngSpan * (Math.random() * 0.7), ne.lat - latSpan * (Math.random() * 0.7));
         addMarker(point);
       }
-    }
+    },
+    handleShowDialog(v) {
+	          // console.log(v);
+	        },
+	        handleCloseDialog(v) {
+	          // console.log(v);
+	        },
+	        handleChangeTab(v) {
+	          // console.log(v);
+	        },
+	        handleChangeMainItem(v) {
+	          // console.log(v)
+	        },
+	        changeData(v) {
+	          console.log(v);
+	        }
   },
   mounted() {
     this.map()
@@ -47,14 +82,26 @@ export default {
 
 </script>
 <style>
-.mapCon {
-  height: 100%
-}
+  .mapCon{
+		height: 100%;
+	}
+	.mapCon .mui-bar {
+		background-color: #5eaef3;
+		color: #fff;
+	}
+  .mapcontainer {
+    height: 100%;
+    padding-top: 5em;
+  }
 
 #allmap {
   height: 100%;
   width: 100%;
 
+}
+.mapCon .mapcontainer .filterbar{
+  top: 46px !important;
+    z-index: 10000;
 }
 
 </style>
