@@ -32,7 +32,7 @@
 		 			<span class="mui-icon icon-qianbao2">钱包</span>
 					<span class="mui-icon mui-icon-arrowright"></span>
 		 		</li>
-		 		<li>
+		 		<li @click="pushSetUp">
 		 			<span class="mui-icon icon-shezhi1">设置</span>
 					<span class="mui-icon mui-icon-arrowright"></span>
 		 		</li>
@@ -57,6 +57,11 @@
 				this.$router.push({
 					name: "my_collection"
 				})
+			},
+			pushSetUp(){
+				this.$router.push({
+					name: "setConfig"
+				})
 			}
 		}
 	}
@@ -65,9 +70,16 @@
 	.myIndex{
 		height: 100%
 	}
+	.myIndex .mui-bar {
+		background-color: #5eaef3;
+	}
+	.myIndex .mui-bar .mui-icon {
+		color: #fff;
+	}
 	.myIndex .my_con{
 		height: 100%;
   		padding-top: 3em;
+		background-color: #fff;
 	}
 	.my_info{
 		display: flex;

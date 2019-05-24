@@ -95,10 +95,17 @@
 	.who_Detail{
 		height: 100%;
 	}
+	.who_Detail .mui-bar {
+		background-color: #5eaef3;
+	}
+	.who_Detail .mui-bar .mui-icon {
+		color: #fff;
+	}
 	.who_Detail .who_con{
 		height: 100%;
-  		padding-top: 3em;
-  		text-align: left;
+  	padding-top: 3em;
+  	text-align: left;
+		background-color: #fff;
 	}
 	.who_Detail .detail_topPopover{
 		position: fixed;

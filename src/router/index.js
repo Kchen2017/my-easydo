@@ -98,6 +98,16 @@ const routerlist =  new Router({
 			path: '/common/index/king',
 			name: 'kingDetail',
 			component: r => require.ensure([], () => (require('@/components/index/components/where/kingDetail.vue')))
+		},
+		{
+			path: '/common/my/setConfig',
+			name: 'setConfig',
+			component: r => require.ensure([], () => (require('@/components/my/components/setConfig.vue')))
+		},
+		{
+			path: '/common/my/switch',
+			name: 'switch',
+			component: r => require.ensure([], () => (require('@/components/my/components/swithId.vue')))
 		}
 	]
 })
