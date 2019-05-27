@@ -32,6 +32,10 @@ const routerlist =  new Router({
 		    	path: 'gogo',
 		    	name: "gogo",
 		    	component: r => require.ensure([], () => (require('@/components/go/index.vue')))
+		    },{
+		    	path: 'playGroud',
+		    	name: "playGroud",
+		    	component: r => require.ensure([], () => (require('@/components/playGroud/index.vue')))
 		    }]
 	    },
 	    {

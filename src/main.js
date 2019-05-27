@@ -13,6 +13,9 @@ import './assets/css/mui/dist/css/mui.css'
 import './assets/css/ui.css'
 
 import VuePreview from 'vue-preview'
+
+import VueCookies from 'vue-cookies'
+Vue.use(VueCookies)
  
 // defalut install
 Vue.use(VuePreview)

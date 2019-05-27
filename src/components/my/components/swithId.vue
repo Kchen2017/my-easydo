@@ -22,6 +22,14 @@ export default {
             this.$router.go(-1)
         },
         swithV(){
+            let iden = this.$cookies.get("identity")
+            let idenVal = ""
+            if(iden === "business"){
+                idenVal = "sporter"
+            }else {
+                idenVal = "business"
+            }
+            this.$cookies.set("identity", idenVal)
             window.location.reload()
         }
     }
