@@ -8,7 +8,7 @@
 	    </header>
 		<div class="detailContent">
 			<div @click="goToImagePre" class="imagContainer">
-				<img src="https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg" alt="">
+				<img src="http://tu.ossfiles.cn:9186/group1/M00/45/45/rBgIBlzOQKDhdntBAAFwtvXS2bY973.jpg" alt="">
 				<span class="mui-icon mui-icon-image flag">20</span>
 			</div>
 			<div class="title">
